@@ -1,29 +1,26 @@
 package br.com.antoniopassos.ssb.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-public class Editora implements Serializable {
+public class Livro implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-	private String nome;
+	private String titulo;
+	private Integer paginas;
+	private Editora editora;
 
-	@JsonIgnore
-	private List<Livro> lstLivros = new ArrayList<>();
-
-	public Editora() {
+	public Livro() {
 		super();
 	}
 
-	public Editora(Long id, String nome) {
+	public Livro(Long id, String titulo, Integer paginas, Editora editora) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.titulo = titulo;
+		this.paginas = paginas;
+		this.editora = editora;
 	}
 
 	public Long getId() {
@@ -34,16 +31,28 @@ public class Editora implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
-	public List<Livro> getLstLivros() {
-		return lstLivros;
+	public Integer getPaginas() {
+		return paginas;
+	}
+
+	public void setPaginas(Integer paginas) {
+		this.paginas = paginas;
+	}
+
+	public Editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
 	}
 
 	@Override
@@ -62,7 +71,7 @@ public class Editora implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Editora other = (Editora) obj;
+		Livro other = (Livro) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
