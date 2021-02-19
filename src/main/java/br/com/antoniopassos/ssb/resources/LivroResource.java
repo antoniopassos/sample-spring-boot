@@ -28,7 +28,7 @@ public class LivroResource {
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Livro> findById(@PathVariable Long id) {
-		Livro editora = repository.findById(id);
+		Livro editora = repository.findById(id).get();
 
 		return ResponseEntity.ok().body(editora);
 	}

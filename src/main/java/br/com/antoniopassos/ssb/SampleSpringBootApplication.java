@@ -27,17 +27,17 @@ public class SampleSpringBootApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Editora editora01 = new Editora(1L, "Sextante");
-		Editora editora02 = new Editora(2L, "Companhia das Letras");
+		Editora editora01 = new Editora(null, "Sextante");
+		Editora editora02 = new Editora(null, "Companhia das Letras");
 
-		Livro livro01 = new Livro(1L, "Os segredos da mente milionária", 176, editora01);
-		Livro livro02 = new Livro(2L, "A coragem de ser imperfeito", 208, editora01);
-		Livro livro03 = new Livro(3L, "Essencialismo", 272, editora01);
+		Livro livro01 = new Livro(null, "Os segredos da mente milionária", 176, editora01);
+		Livro livro02 = new Livro(null, "A coragem de ser imperfeito", 208, editora01);
+		Livro livro03 = new Livro(null, "Essencialismo", 272, editora01);
 
-		Livro livro04 = new Livro(4L, "1984", 416, editora02);
-		Livro livro05 = new Livro(5L, "O menino do pijama listrado", 192, editora02);
-		Livro livro06 = new Livro(6L, "O gene", 680, editora02);
-		Livro livro07 = new Livro(7L, "A revolução dos bichos", 152, editora02);
+		Livro livro04 = new Livro(null, "1984", 416, editora02);
+		Livro livro05 = new Livro(null, "O menino do pijama listrado", 192, editora02);
+		Livro livro06 = new Livro(null, "O gene", 680, editora02);
+		Livro livro07 = new Livro(null, "A revolução dos bichos", 152, editora02);
 
 		editora01.getLstLivros().addAll(Arrays.asList(livro01, livro02, livro03));
 		editora02.getLstLivros().addAll(Arrays.asList(livro04, livro05, livro06, livro07));

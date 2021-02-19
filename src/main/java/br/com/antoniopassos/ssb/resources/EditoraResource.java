@@ -28,7 +28,7 @@ public class EditoraResource {
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Editora> findById(@PathVariable Long id) {
-		Editora editora = repository.findById(id);
+		Editora editora = repository.findById(id).get();
 
 		return ResponseEntity.ok().body(editora);
 	}
